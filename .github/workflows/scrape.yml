@@ -1,0 +1,35 @@
+name: 인디알리미 - KOCCA 지원공고 모니터링
+
+on:
+  schedule:
+    - cron: "0 * * * *" # 매시 정각 (UTC). 필요시 간격 조절
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Run scraper
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          KEYWORDS: ${{ vars.KEYWORDS }}
+        run: python scraper.py
+
+      - name: Commit updated seen_ids.json
+        run: |
+          git config user.name "indie-alimi"
+          git config user.email "actions@users.noreply.github.com"
+          git add seen_ids.json
+          git diff --cached --quiet || git commit -m "chore: update seen ids"
+          git push

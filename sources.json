@@ -1,0 +1,14 @@
+[
+  {
+    "id": "kocca",
+    "label": "한국콘텐츠진흥원(콘진원)",
+    "url": "https://www.kocca.kr/kocca/pims/list.do",
+    "parser": "kocca"
+  },
+  {
+    "id": "gcon",
+    "label": "경기콘텐츠진흥원(경콘진)",
+    "url": "https://www.gcon.or.kr/gcon/business/gconNotice/list.do",
+    "parser": "gcon"
+  }
+]
