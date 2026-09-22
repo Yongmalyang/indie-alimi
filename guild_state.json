@@ -1,0 +1,46 @@
+{
+  "1468586100418281620": {
+    "enabled": [
+      "gcon",
+      "gstar",
+      "indielog",
+      "kocca",
+      "playx4",
+      "startupplus"
+    ],
+    "channel_id": 1550901730374451322,
+    "seen": [
+      "gstar:1162",
+      "gstar:1166",
+      "gstar:1172",
+      "kocca:326D00034004",
+      "kocca:326D00108002",
+      "playx4:3BL643160001",
+      "playx4:3BT9UMUA0001",
+      "startupplus:4734",
+      "startupplus:4832",
+      "startupplus:5043",
+      "startupplus:5717",
+      "startupplus:6036",
+      "startupplus:6037",
+      "startupplus:6066",
+      "startupplus:6639",
+      "startupplus:6856",
+      "startupplus:7049",
+      "startupplus:7154",
+      "startupplus:7316",
+      "startupplus:7620",
+      "startupplus:7621",
+      "startupplus:7880",
+      "startupplus:7881"
+    ],
+    "known": [
+      "gcon",
+      "gstar",
+      "indielog",
+      "kocca",
+      "playx4",
+      "startupplus"
+    ]
+  }
+}

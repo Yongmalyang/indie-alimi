@@ -10,5 +10,35 @@
     "label": "경기콘텐츠진흥원(경콘진)",
     "url": "https://www.gcon.or.kr/gcon/business/gconNotice/list.do",
     "parser": "gcon"
+  },
+  {
+    "id": "startupplus",
+    "label": "서울게임콘텐츠센터",
+    "url": "https://gamecontents.startup-plus.kr/board/B000283",
+    "parser": "startupplus",
+    "max_age_days": 120
+  },
+  {
+    "id": "playx4",
+    "label": "플레이엑스포(PlayX4)",
+    "url": "https://www.playx4.or.kr/b2c/board/notice.php",
+    "parser": "playx4",
+    "require_keywords": ["모집", "결과", "참가", "접수", "공모"],
+    "max_age_days": 120
+  },
+  {
+    "id": "gstar",
+    "label": "지스타(G-STAR)",
+    "url": "https://www.gstar.or.kr/board/board_user_list.do?bmt_idx=1",
+    "parser": "gstar",
+    "require_keywords": ["모집", "결과", "참가", "접수", "공모"],
+    "max_age_days": 120
+  },
+  {
+    "id": "indielog",
+    "label": "인디로그(스마일게이트 IndieLOG)",
+    "url": "https://page.onstove.com/devlog/kr/list/139789",
+    "parser": "indielog",
+    "require_keywords": []
   }
 ]

@@ -5,7 +5,7 @@
     python scraper.py
 
 설정은 .env 파일(DISCORD_WEBHOOK_URL, KEYWORDS)에서 읽습니다.
-슬래시 커맨드(/add-source 등)로 사용하려면 bot.py를 실행하세요.
+슬래시 커맨드로 사용하려면 bot.py를 실행하세요.
 """
 
 import os
@@ -21,6 +21,9 @@ load_dotenv()
 KEYWORDS = [k.strip() for k in os.environ.get("KEYWORDS", "게임").split(",") if k.strip()]
 REQUIRE_KEYWORDS = [
     k.strip() for k in os.environ.get("REQUIRE_KEYWORDS", "게임").split(",") if k.strip()
+]
+EXCLUDE_KEYWORDS = [
+    k.strip() for k in os.environ.get("EXCLUDE_KEYWORDS", "").split(",") if k.strip()
 ]
 WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
@@ -52,7 +55,7 @@ def check_and_notify() -> int:
     new_seen = set(seen)
     sent = 0
 
-    for item in fetch_all(load_sources(), KEYWORDS, REQUIRE_KEYWORDS):
+    for item in fetch_all(load_sources(), KEYWORDS, REQUIRE_KEYWORDS, EXCLUDE_KEYWORDS):
         if item["id"] in new_seen:
             continue
         new_seen.add(item["id"])
